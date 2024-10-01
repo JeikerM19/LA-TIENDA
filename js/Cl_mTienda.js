@@ -1,45 +1,22 @@
 export class Cl_mTienda {
-    constructor({pA, pB, pC}){
-        this.productoA = pA;
-        this.productoB = pB;
-        this.productoC = pC;
+    constructor(){
         this.acA = 0;
         this.acB = 0;
         this.acC = 0;
         this.acMontoTotal = 0.0;
     }
-    get productoA() {
-        return this._productoA;
-    }
-    set productoA(pA) {
-        this._productoA = pA;
-    }
-    
-    get productoB() {
-        return this._productoB;
-    }
-    set productoB(pB) {
-        this._productoB = pB;
-    }
-    
-    get productoC() {
-        return this._productoC;
-    }
-    set productoC(pC) {
-        this._productoC = pC;
-    }
     procesarCliente(cli){
-        switch(cli.cod){
-            case 'A': this.acA += cli.cant;
+        switch(cli.codigo){
+            case 'A': this.acA += cli.cantidad;
             break;
-            case 'B': this.acB += cli.cant;
+            case 'B': this.acB += cli.cantidad;
             break;
-            case 'C': this.acC += cli.cant;
+            case 'C': this.acC += cli.cantidad;
             break;
             default: 0;
             break;
         }
-        this.acMontoTotal += cli.montoPagaCliente(this.productoA, this.productoB, this.productoC);
+        this.acMontoTotal += cli.montoPagarCliente();
     }
     articuloMasVendido(){
         if(this.acA == this.acB || this.acA == this.acC){

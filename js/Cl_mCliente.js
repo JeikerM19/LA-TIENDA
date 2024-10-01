@@ -1,34 +1,36 @@
 export class Cl_mCliente {
     constructor({ced, cod, cant}){
-        this.ced = ced;
-        this.cod = cod;
-        this.cant = cant;
+        this.cedula = ced;
+        this.codigo = cod;
+        this.cantidad = cant;
     }
-    get ced() {
-        return this._ced;
+    get cedula() {
+        return this._cedula;
     }
-    set ced(ced) {
-        this._ced = ced;
-    }
-    
-    get cod() {
-        return this._cod;
-    }
-    set cod(cod) {
-        this._cod = cod;
+    set cedula(ced) {
+        this._cedula = ced;
     }
     
-    get cant() {
-        return this._cant;
+    get codigo() {
+        return this._codigo;
     }
-    set cant(cant) {
-        this._cant = cant;
+    set codigo(cod) {
+        this._codigo = cod;
     }
-    montoPagaCliente(a, b, c){
-        switch(this.cod){
-            case 'A': return a * this.cant;
-            case 'B': return b * this.cant;
-            case 'C': return c * this.cant;
+    
+    get cantidad() {
+        return this._cantidad;
+    }
+    set cantidad(cant) {
+        this._cantidad = cant;
+    }
+    
+
+    montoPagarCliente(){
+        switch(this.codigo){
+            case 'A': return 10 * this.cantidad;
+            case 'B': return 5 * this.cantidad;
+            case 'C': return 20 * this.cantidad;
             default: return 0;
         }
     }

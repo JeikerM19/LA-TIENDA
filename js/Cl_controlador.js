@@ -7,7 +7,7 @@ export class Cl_controlador {
     constructor(){
         this.vCliente = new Cl_vCliente(this);
         this.vTienda = new Cl_vTienda(this);
-        
+        this.mTienda = new Cl_mTienda();
     }
     mostrarVistaCliente(){
         this.vTienda.ocultar();
@@ -17,22 +17,16 @@ export class Cl_controlador {
         this.vCliente.ocultar();
         this.vTienda.mostrar();
     }
-    agregarPrecios({pA, pB, pC}){
-        let tienda = new Cl_mTienda({pA, pB, pC});
-        return tienda;
-    }
-    
     agregarVenta({ced, cod ,cant}){
         let cliente = new Cl_mCliente({ced, cod, cant});
-        let tienda = this.agregarPrecios({pA, pB, pC});
-        tienda.procesarCliente(cliente);
+        this.mTienda.procesarCliente(cliente);
         this.vTienda.reporteVenta({
-            ced: cliente.ced, 
-            cod: cliente.cod, 
-            cant: cliente.cant, 
-            montoPagaCliente: cliente.montoPagaCliente( tienda.productoA, tienda.productoB, tienda.productoC ), 
-            articuloMasVendido: tienda.articuloMasVendido(), 
-            mostarMontoTotal: tienda.mostarMontoTotal()
+            ced: cliente.cedula, 
+            cod: cliente.codigo, 
+            cant: cliente.cantidad, 
+            montoPagarCliente: cliente.montoPagarCliente(), 
+            articuloMasVendido: this.mTienda.articuloMasVendido(), 
+            mostarMontoTotal: this.mTienda.mostarMontoTotal()
         });
         this.mostrarVistaTienda();
     }

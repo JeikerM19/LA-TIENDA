@@ -9,8 +9,10 @@ table, th, td {
 
 section {
     border: 1px solid black;
+    margin: auto;
     margin-top: 10px;
-    width: 100%;
+    width: 98%;
+    padding: 10px;
 }
 input {
     display: block;
