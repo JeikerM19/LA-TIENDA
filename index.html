@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section id="mainForm">
+    <section id="mainForm"><!-- Seccion Principal donde se piden los precios de los productos y se muestran los requerimientos-->
         <h3>La Tienda</h3>
-        <table id="mainForm_tabla">
+        <section id="clienteForm_inPrecios"> <!--Seccion donde se piden los precios de los productos-->
+            <h3>Datos del Cliente</h3>
+        <input type="text" id="clienteForm_inPrecioPA" placeholder="Precio del producto A">
+        <input type="text" id="clienteForm_inPrecioPB" placeholder="Precio del producto B">
+        <input type="text" id="clienteForm_inPrecioPC" placeholder="Precio del producto C">
+        <button id="mainForm_btAceptar">Aceptar</button>
+        </section>
+
+        <table id="mainForm_tabla"> <!--Tabla donde iran apareciendo los datos del cliente y su monto a pagar-->
             <tr>
                 <th>Cedula</th>
                 <th>Codigo</th>
@@ -18,11 +26,11 @@
             </tr>
         </table>
         <h5>El articulo mas vendido fue: <span id="mainForm_lblArtMasVendido"></span></h5>
-        <h5>El monto total ganado fue de: <span id="mainForm_lblMontoFinal"></span> $</h5>
+        <h5>El monto total ganado fue de: <span id="mainForm_lblMontoFinal"></span> $</h5> <!--Se muestran los requirimientos restantes que se pide por la clase tienda-->
         <button id = "mainForm_btAgregar">Agregar Venta</button>
     </section>
 
-    <section id="clienteForm">
+    <section id="clienteForm"> <!--Seccion donde se pide los datos al cliente-->
         <h3>Datos del Cliente</h3>
         <input type="text" id="clienteForm_inCedula" placeholder="Cedula">
         <input type="text" id="clienteForm_inCodigo" placeholder="Codigo">

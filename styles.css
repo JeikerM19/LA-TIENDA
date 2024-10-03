@@ -14,6 +14,10 @@ section {
     width: 98%;
     padding: 10px;
 }
+#clienteForm_inPrecios {
+    margin-bottom: 10px;
+    border: none;
+}
 input {
     display: block;
     margin: auto;

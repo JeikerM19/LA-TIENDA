@@ -1,8 +1,11 @@
 export class Cl_mCliente {
-    constructor({ced, cod, cant}){
+    constructor({ced, cod, cant, pPA, pPB, pPC}){
         this.cedula = ced;
         this.codigo = cod;
         this.cantidad = cant;
+        this.pPA = pPA;
+        this.pPB = pPB;
+        this.pPC = pPC;
     }
     get cedula() {
         return this._cedula;
@@ -17,20 +20,36 @@ export class Cl_mCliente {
     set codigo(cod) {
         this._codigo = cod;
     }
-    
     get cantidad() {
         return this._cantidad;
     }
     set cantidad(cant) {
         this._cantidad = cant;
     }
+    get pPA() {
+        return this._pPA;
+    }
+    set pPA(pPA) {
+        this._pPA = pPA;
+    }
     
-
+    get pPB() {
+        return this._pPB;
+    }
+    set pPB(pPB) {
+        this._pPB = pPB;
+    }
+    get pPC() {
+        return this._pPC;
+    }
+    set pPC(pPC) {
+        this._pPC = pPC;
+    }
     montoPagarCliente(){
         switch(this.codigo){
-            case 'A': return 10 * this.cantidad;
-            case 'B': return 5 * this.cantidad;
-            case 'C': return 20 * this.cantidad;
+            case 'A': return this.pPA * this.cantidad;
+            case 'B': return this.pPB * this.cantidad;
+            case 'C': return this.pPC * this.cantidad;
             default: return 0;
         }
     }

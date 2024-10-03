@@ -1,9 +1,12 @@
 export class Cl_mTienda {
-    constructor(){
+    constructor({pA, pB, pC}){
         this.acA = 0;
         this.acB = 0;
         this.acC = 0;
         this.acMontoTotal = 0.0;
+        this.precioPA = pA;
+        this.precioPB = pB;
+        this.precioPC = pC;
     }
     procesarCliente(cli){
         switch(cli.codigo){
