@@ -4,6 +4,7 @@ import { Cl_mTienda } from "./Cl_mTienda.js";
 import { Cl_mCliente } from "./Cl_mCliente.js";
 
 export class Cl_controlador {
+
     constructor(){
         this.vCliente = new Cl_vCliente(this);
         this.vTienda = new Cl_vTienda(this);
@@ -33,7 +34,11 @@ export class Cl_controlador {
             cant: cliente.cantidad, 
             montoPagarCliente: cliente.montoPagarCliente(), 
             articuloMasVendido: this.tienda.articuloMasVendido(), 
-            mostarMontoTotal: this.tienda.mostarMontoTotal() //Sustituimos los parametros del reporte venta por cada uno de los valores necesarios
+            mostarMontoTotal: this.tienda.mostarMontoTotal(),
+            productoB: this.tienda.productoB(),
+            mayorMonto: this.tienda.mayorMonto(),
+            articuloMasVendido2: this.tienda.articuloMasVendido2()
+             //Sustituimos los parametros del reporte venta por cada uno de los valores necesarios
         });
         this.mostrarVistaTienda(); //Muestra la vista Tienda(mainForm) y Oculta la vista Cliente(clienteForm)
     }

@@ -7,6 +7,7 @@ export class Cl_mTienda {
         this.precioPA = pA;
         this.precioPB = pB;
         this.precioPC = pC;
+        this.mayor = 0.0;
     }
     procesarCliente(cli){
         switch(cli.codigo){
@@ -20,6 +21,9 @@ export class Cl_mTienda {
             break;
         }
         this.acMontoTotal += cli.montoPagarCliente();
+        if(cli.montoPagarCliente() > this.mayor){
+            this.mayor = cli.montoPagarCliente();
+        }
     }
     articuloMasVendido(){
         if(this.acA == this.acB || this.acA == this.acC){
@@ -46,6 +50,22 @@ export class Cl_mTienda {
     }
     mostarMontoTotal(){
         return this.acMontoTotal.toFixed(2);
+    }
+    productoB(){
+        return this.acB * this.precioPB;
+    }
+    mayorMonto(){
+        return this.mayor;
+    }
+    articuloMasVendido2(){
+        if(this.acA > this.acC){
+            return "Producto A";
+        } 
+        else if(this.acC > this.acA){
+            return "Producto C";
+        } else {
+            return "Producto A y C por igual";
+        }
     }
 
 }
