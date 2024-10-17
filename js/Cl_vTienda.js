@@ -6,9 +6,6 @@ export class Cl_vTienda {
         this.btAgregar =  document.getElementById("mainForm_btAgregar");
         this.lblArtMasVendido =  document.getElementById("mainForm_lblArtMasVendido");
         this.lblMontoFinal =  document.getElementById("mainForm_lblMontoFinal");
-        this.lblIngresoProductoB = document.getElementById("mainForm_lblIngresoProductoB");
-        this.lblMayorMonto = document.getElementById("mainForm_lblMayorMonto");
-        this.lblArtMasVendido2 = document.getElementById("mainForm_lblArtMasVendido2");
         this.inPrecioPA = document.getElementById("clienteForm_inPrecioPA");
         this.inPrecioPB = document.getElementById("clienteForm_inPrecioPB");
         this.inPrecioPC = document.getElementById("clienteForm_inPrecioPC");
@@ -33,7 +30,7 @@ export class Cl_vTienda {
     ocultarPrecios(){
         this.inPrecios.hidden = true;
     }
-    reporteVenta({ced, cod, cant, montoPagarCliente, articuloMasVendido, mostarMontoTotal, productoB, mayorMonto, articuloMasVendido2}){
+    reporteVenta({ced, cod, cant, montoPagarCliente, articuloMasVendido, mostarMontoTotal}){
         this.tabla.innerHTML += `
         <tr>
             <td>${ced}</td>
@@ -44,9 +41,6 @@ export class Cl_vTienda {
         `;
         this.lblArtMasVendido.innerHTML = articuloMasVendido;
         this.lblMontoFinal.innerHTML = mostarMontoTotal;
-        this.lblIngresoProductoB.innerHTML = productoB;
-        this.lblMayorMonto.innerHTML = mayorMonto;
-        this.lblArtMasVendido2.innerHTML = articuloMasVendido2;
         //Se muestran los reportes haciendo uso de cada uno de los parametros
     }
 }
